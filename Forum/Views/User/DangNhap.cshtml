@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<h4 style="color:red; text-align:center;">@ViewBag.ThongBao</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div style="border: 0.1px thin;padding:10px; border-radius: 7px; background-color:white; box-shadow: 0 10px 24px hsla(0,0%,0%,0.05), 0 20px 48px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.1);">
+                <h3 style="text-align:center; font-family:Roboto; font-weight:revert; margin-top:30px; color:blue;">ĐĂNG NHẬP</h3>
+                <table align="center" style="margin-top:10px; font-size:16px; margin-bottom:35px; ">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+                        if (Request.Cookies["TenDangNhap"] != null && Request.Cookies["MatKhau"] != null)
+                        {
+                            <tr>
+                                <td colspan="2">Tên đăng nhập:&nbsp;</td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.TextBox("TenDangNhap", Request.Cookies["TenDangNhap"].Value)
+                                    @ViewData["Err1"]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Mật khẩu:</td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.Password("MatKhau", Request.Cookies["MatKhau"].Value)
+                                    @ViewBag.Err2
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="2" style="font-family: Roboto;">Tên đăng nhập:&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.TextBox("TenDangNhap")
+                                    @ViewData["Err1"]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-family: Roboto;">Mật khẩu:</td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.Password("MatKhau")
+                                    @ViewData["Err2"]
+                                </td>
+                            </tr>
+
+                        }
+                        <tr>
+                            <td colspan="2">
+                                @Html.CheckBox("Remember")
+                                <span style="font-style:italic; font-family: Roboto;">
+                                    Nhớ thông tin
+                                    đăng nhập
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <input class="btn btn-success" style="width:100%" type="submit" value="Đăng nhập" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div style="margin-top:20px;">
+                <button type="submit" class="btn btn-primary" style="width:100%; box-shadow: 0 10px 24px hsla(0,0%,0%,0.05), 0 20px 48px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.1); padding:8px; border:0.5px solid; border-radius:7px;">
+                    <i class="bi bi-google"></i> &nbsp; Đăng nhập với Google
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</div>

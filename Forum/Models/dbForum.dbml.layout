@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 10.75" name="dbForum">
+  <DataContextMoniker Name="/dbForumDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9ee19072-b8f2-422e-a52f-11966a89103e" absoluteBounds="6.75, 7.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbForumDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ee7b1f6-0d60-45c3-99c3-a8668090617c" absoluteBounds="6.765, 7.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5137d956-8c36-48bd-8716-f3dc3a1cc39f" absoluteBounds="3.5, 3.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbForumDataContext/TraLoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc3cdcb0-b47c-4500-b32f-7735648d2b2a" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" absoluteBounds="6.5, 2.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/dbForumDataContext/BaiDang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db9465bf-96c8-42dd-ab99-c1d4330e4b09" absoluteBounds="6.515, 3.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="370517e3-2d0d-4fed-9a87-21f7a372df95" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbForumDataContext/ChuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff0d2055-65d6-4e9b-a594-d4f897b037d4" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4065d295-992b-4603-a3ef-29e999f9bd78" absoluteBounds="0.75, 9.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dbForumDataContext/Menu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fed9a011-92dc-4ff9-a63b-6adb93412567" absoluteBounds="0.765, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98e75bd3-13b4-47fe-968b-e54ddfbc3bc8" absoluteBounds="0.75, 3, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbForumDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56b786c7-2495-4535-8c3e-644659b517f4" absoluteBounds="0.765, 3.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b366c35-e3c7-4358-804e-3d961f9ba12c" absoluteBounds="9.25, 3.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbForumDataContext/PhanHoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90895f60-790c-4e6f-8d9d-841e889bb951" absoluteBounds="9.265, 3.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b377391-3985-47eb-bd0a-50143af23e13" absoluteBounds="3.75, 6.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/dbForumDataContext/The_Tag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="714c95fb-183b-4925-b1d2-1ffac6d584de" absoluteBounds="3.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 4.35659912109375); (5.73958333333333 : 4.35659912109375 : JumpStart); (5.57291666666667 : 4.35659912109375 : JumpEnd); (5.5 : 4.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/BaiDang/BaiDang_TraLoi" />
+      <nodes>
+        <classShapeMoniker Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" />
+        <classShapeMoniker Id="5137d956-8c36-48bd-8716-f3dc3a1cc39f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 1.94399251302083); (5.65625 : 5.6963525390625); (6.5 : 5.6963525390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/ChuDe/ChuDe_BaiDang" />
+      <nodes>
+        <classShapeMoniker Id="370517e3-2d0d-4fed-9a87-21f7a372df95" />
+        <classShapeMoniker Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.35659912109375); (3.5 : 4.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/NguoiDung/NguoiDung_TraLoi" />
+      <nodes>
+        <classShapeMoniker Id="98e75bd3-13b4-47fe-968b-e54ddfbc3bc8" />
+        <classShapeMoniker Id="5137d956-8c36-48bd-8716-f3dc3a1cc39f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.15625); (5.57291666666667 : 3.15625 : JumpStart); (5.73958333333333 : 3.15625 : JumpEnd); (6.16666666666667 : 3.15625 : JumpStart); (6.33333333333333 : 3.15625 : JumpEnd); (6.5 : 3.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/NguoiDung/NguoiDung_BaiDang" />
+      <nodes>
+        <classShapeMoniker Id="98e75bd3-13b4-47fe-968b-e54ddfbc3bc8" />
+        <classShapeMoniker Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 4.35659912109375); (9.25 : 4.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/BaiDang/BaiDang_PhanHoi" />
+      <nodes>
+        <classShapeMoniker Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" />
+        <classShapeMoniker Id="7b366c35-e3c7-4358-804e-3d961f9ba12c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3); (1.75 : 2.625); (5.57291666666667 : 2.625 : JumpStart); (5.73958333333333 : 2.625 : JumpEnd); (6.16666666666667 : 2.625 : JumpStart); (6.33333333333333 : 2.625 : JumpEnd); (8.875 : 2.625); (8.875 : 3.83454756054688); (9.25 : 3.83454756054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/NguoiDung/NguoiDung_PhanHoi" />
+      <nodes>
+        <classShapeMoniker Id="98e75bd3-13b4-47fe-968b-e54ddfbc3bc8" />
+        <classShapeMoniker Id="7b366c35-e3c7-4358-804e-3d961f9ba12c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.83454756054688); (5.57291666666667 : 3.83454756054687 : JumpStart); (5.73958333333333 : 3.83454756054688 : JumpEnd); (6.25 : 3.83454756054688); (6.25 : 2.375); (10.25 : 2.375); (10.25 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/TraLoi/TraLoi_PhanHoi" />
+      <nodes>
+        <classShapeMoniker Id="5137d956-8c36-48bd-8716-f3dc3a1cc39f" />
+        <classShapeMoniker Id="7b366c35-e3c7-4358-804e-3d961f9ba12c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.703125 : 6.75); (5.703125 : 5.8754321875); (6.5 : 5.8754321875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbForumDataContext/The_Tag/The_Tag_BaiDang" />
+      <nodes>
+        <classShapeMoniker Id="2b377391-3985-47eb-bd0a-50143af23e13" />
+        <classShapeMoniker Id="3ffd11a9-2216-4bb8-80cd-2d05877e3185" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Forum.Models.NguoiDung>
+@{
+    ViewBag.Title = "Đặt câu hỏi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/ckeditor/ckeditor.js"></script>
+<h2>Đặt câu hỏi cần được giải đáp</h2>
+@using (Html.BeginForm("Index", "NewPost", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group" style="border: 0.5px solid; padding: 20px; margin-top: 30px; margin-bottom: 15px;">
+                    <p style="font-size:18px; font-weight:bold;">Phần tiêu đề</p>
+                    <p style="font-size:14px;font-style:italic;">Hãy cụ thể và tưởng tượng bạn đang đặt câu hỏi cho người khác.</p>
+                    <input type="text" size="70" name="sTieuDe" required />
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group" style="border: 0.5px solid; padding: 20px; margin-top: 15px; margin-bottom: 15px; ">
+                    <p style="font-size:18px; font-weight:bold;">Phần nội dung</p>
+                    <p style="font-size:14px;font-style:italic;">Mô tả vấn đề, những gì bạn đã cố gắng, những gì bạn mong được giải đáp.</p>
+                    <textarea id="noidung" size="70" name="sNoiDung"></textarea>
+                    <script>CKEDITOR.replace('noidung');</script>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group" style="border: 0.5px solid; padding: 20px; margin-top: 15px; margin-bottom:15px;">
+                    <p style="font-size:18px; font-weight:bold;">Thêm hình ảnh (nếu có)</p>
+                    <p style="font-size:14px;font-style:italic;">Hình ảnh chụp lại những lỗi hay vấn đề cản giải quyết.</p>
+                    <input type="file" size="70" name="fFileUpload"/>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-1 col-md-10">
+                        <button type="submit" class="btn btn-outline-primary">Lưu câu hỏi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

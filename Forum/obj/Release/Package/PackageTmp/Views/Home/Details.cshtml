@@ -1,0 +1,194 @@
+﻿@using Forum.Models
+@model Forum.Models.BaiDang
+
+@{
+    List<UserComment> commnet = ViewBag.TraLoi as List<UserComment>;
+    List<UserFeedback> feedback = ViewBag.PhanHoi as List<UserFeedback>;
+    ViewBag.Title = @Html.DisplayFor(model => model.TieuDe);
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    var nd = ViewBag.NguoiDung as NguoiDung;
+
+}
+<script src="~/ckeditor/ckeditor.js"></script>
+<style>
+    #Traloi:hover{
+        border:0.5px solid;
+        border-radius:7px;
+    }
+    #Tang:hover {
+        background-color: #E7E9EB;
+        border: 0px;
+        border-radius: 7px;
+    }
+</style>
+<div style="margin-top:50px;">
+    <h4 style="text-transform:uppercase;">@Html.DisplayFor(model => model.TieuDe)</h4>
+    <div id="NguoiDang" style="margin: 10px;">
+        @if (nd.GioiTinh == false)
+        {
+            <img src="~/Images/Female.jpg" style="width: 32px; height: 32px; border: 1px solid #1570ef; border-radius: 100%;" />
+        }
+        else
+        {
+            <img src="~/Images/Male.jpg" style="width: 32px; height: 32px; border: 1px solid #1570ef; border-radius: 100%;" />
+        }
+        <span style="font-family:Roboto; font-style:initial;">@nd.TenND</span>
+    </div>
+    <div style="display: flex !important; margin: 20px 10px 20px;">
+        <span style="color: hsl(210,8%,45%); "> Đã hỏi lúc:&nbsp; </span> @{ var item = Model.NgayDang.Value;} <span>@item.ToString("dd/MM/yyyy").Replace('-', '/')</span>
+    </div>
+    <div id="TheTag" style="margin-bottom: 1em; margin-left:-30px; font-size:15px;">
+        <ul style="display: inline !important; list-style: none;">
+            <li style="display: inline !important; margin-right:4px;">
+                <a href="#" style="color: hsl(205deg 47% 42%); text-decoration:none; background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Mảng</a>
+            </li>
+            <li style="display: inline !important; margin-right: 4px; ">
+                <a href="#" style="color: hsl(205deg 47% 42%); text-decoration: none; background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px;">C++</a>
+            </li>
+            <li style="display: inline !important; margin-right: 4px;">
+                <a href="#" style="color: hsl(205deg 47% 42%); text-decoration: none; background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Kỹ thuật lập trình</a>
+            </li>
+            <li style="display: inline !important; margin-right: 4px;">
+                <a href="#" style="color: hsl(205deg 47% 42%); text-decoration: none; background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Năm nhất</a>
+            </li>
+        </ul>
+    </div>
+    <hr />
+    <div style="text-align:justify;">
+        @Html.Raw(Model.NoiDung.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+    </div>
+    <hr />
+    @foreach (var userFeedback in feedback)
+    {
+        if (userFeedback.phanhoi.MaTL == null)
+        {
+        <div style="margin-left: 20%; width: 80%; font-family: Roboto; margin-top: 10px; border-radius: 7px; background-color: #E7E9EB; padding:5px;">
+            <div style=" padding: 10px;">
+                <span style="font-weight:bold;">@userFeedback.nguoidung.TenND</span>
+                <span style="float:right; font-style:italic;">@userFeedback.phanhoi.NgayGioPH.Value.ToString("dd/MM/yyyy").Replace('-', '/')</span>
+            </div>
+            <div style="display: flex; align-items: center !important;">
+                <div style=" height:auto; border: 0px; border-radius: 7px; background-color: white; padding:10px; font-size:15px; width:90%; margin:0px 5% 10px 5px; ">
+                    @Html.Raw(userFeedback.phanhoi.NoiDungPH.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                </div>
+            </div>
+        </div>
+        }
+    }
+    <a style="width:25%; margin-left:75%; text-decoration:none; opacity:70%;" class="text-secondary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Phản hồi bài đăng
+    </a>
+    <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+            @using (Html.BeginForm())
+            {
+                <textarea id="noidungphbd" size="70" name="sNoiDungPHBD"></textarea>
+                <script>CKEDITOR.replace('noidungphbd');</script>
+                <button style="margin:auto; width: 25%;" type="submit" name="sFlag" value="0" class="btn btn-outline-primary">Lưu phản hồi</button>
+            }
+        </div>
+    </div>
+    <hr />
+    <div style="width:100%; text-align:center; height:auto; display:flex;">
+        <div style="width: 33%; height: 50px; display: flex !important; align-items: center !important; margin:auto;">
+            <div style="height: 50px; display: flex !important; align-items: stretch !important; justify-content: center !important; flex-direction: column !important; margin-left:40%;">
+                @using (Html.BeginForm())
+                {
+                    <button id="Tang" name="btnTang" value="1" style="border:0px; border-radius:7px; background-color: white;"><span class="bi bi-caret-up-fill"></span></button>
+                    if (Model.LuotTuongTac == null)
+                    {
+                        <div style="margin:2px; align-items: center !important; flex-direction: column !important; display: flex !important; ">0</div>
+                    }
+                    else
+                    { <div style="margin:2px; align-items: center !important; flex-direction: column !important; display: flex !important; ">@Model.LuotTuongTac </div>}
+                    <button id="Giam" name="btnGiam" value="1" style="border:0px; border-radius:7px; background-color: white;"><span class="bi bi-caret-down-fill"></span></button>
+                }
+
+            </div>
+            <span style="margin-left:5px;"> Vote </span>
+        </div>
+        <div id="Traloi" style="cursor:pointer; width: 33%; height: 50px; display: flex !important; align-items: center !important; justify-content: center !important; "> <a style="width:100%; text-decoration:none; color:black;" href="#PhanTraLoi">Trả lời </a></div>
+        <div style="width: 33%; height: 50px; display: flex !important; align-items: center !important; justify-content: center !important; "> Chia sẻ </div>
+
+    </div>
+    <div style="margin-top:50px;">
+        <h5>@{var count = commnet.Count();} @count Trả lời</h5>
+        <div>
+            @{  var i = 2;
+                var j = 0;
+
+                foreach (var userComment in commnet)
+                {
+                    string tlph = "noidungtlph" + (j++).ToString();
+                    i++;
+                    <div style="margin-left: 10%; width: 90%; font-family: Roboto; margin-top: 10px; border-radius: 7px; background-color: #E7E9EB; padding:5px;">
+                        <div style=" padding: 10px;">
+                            <span style="font-weight:bold;">@userComment.nguoidung.TenND</span>
+                            <span style="float:right; font-style:italic;">@userComment.traloi.NgayGioTL.Value.ToString("dd/MM/yyyy").Replace('-', '/')</span>
+                        </div>
+                        <div style="display: flex; align-items: center !important;">
+                            <div style="width:5%; height: auto; display:flex; margin-left:5%;">
+                                <div style=" height: auto; display: flex !important; align-items: stretch !important; justify-content: center !important; flex-direction: column !important;">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <button id="Tang" name="btnTang" value="2" style="border:0px; border-radius:7px; background-color: white;"><span class="bi bi-caret-up-fill"></span></button>
+                                        if (userComment.traloi.LuotTTTL == null)
+                                        {
+                                            <div style="margin:2px; align-items: center !important; flex-direction: column !important; display: flex !important; ">0</div>
+                                        }
+                                        else
+                                        { <div style="margin:2px; align-items: center !important; flex-direction: column !important; display: flex !important; ">@userComment.traloi.LuotTTTL </div>}
+                                        <button id="Giam" name="btnGiam" value="2" style="border:0px; border-radius:7px; background-color: white;"><span class="bi bi-caret-down-fill"></span></button>
+                                    }
+                                </div>
+                            </div>
+                            <div style=" height:auto; border: 0px; border-radius: 7px; background-color: white; padding:10px; font-size:15px; width:90%; margin:0px 5% 10px 5px; ">
+                                @Html.Raw(userComment.traloi.NoiDungTL.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                            </div>
+                        </div>
+                        <a style="width:25%; margin-left:75%; text-decoration:none; opacity:70%;" class="text-secondary" data-toggle="collapse" href="#collapseExample@(i)" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Phản hồi câu trả lời
+                        </a>
+                        <div class="collapse" id="collapseExample@(i)">
+                            <div class="card card-body">
+                                @using (Html.BeginForm())
+                                {
+                                    <textarea id="@tlph" size="70" name="sNoiDungPHTL"></textarea>
+                                    <script>CKEDITOR.replace('@tlph')</script>
+                                    <button style="margin:auto; width: auto;" type="submit" name="sFlag" value="@userComment.traloi.MaTL.ToString()" class="btn btn-outline-primary">Lưu phản hồi</button>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    foreach (var userFeedback in feedback)
+                    {
+                        if (userFeedback.phanhoi.MaTL == userComment.traloi.MaTL)
+                        {
+                            <div style="margin-left: 20%; width: 80%; font-family: Roboto; margin-top: 10px; border-radius: 7px; background-color: #E7E9EB; padding:5px;">
+                                <div style=" padding: 10px;">
+                                    <span style="font-weight:bold;">@userFeedback.nguoidung.TenND</span>
+                                    <span style="float:right; font-style:italic;">@userFeedback.phanhoi.NgayGioPH.Value.ToString("dd/MM/yyyy").Replace('-', '/')</span>
+                                </div>
+                                <div style="display: flex; align-items: center !important;">
+                                    <div style=" height:auto; border: 0px; border-radius: 7px; background-color: white; padding:10px; font-size:15px; width:90%; margin:0px 5% 10px 5px; ">
+                                        @Html.Raw(userFeedback.phanhoi.NoiDungPH.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            }
+        </div>
+        <div id="PhanTraLoi" style="margin-left: 10%; margin-top: 20px; width: 90%; border-radius: 7px; padding: 10px; background-color: #E7E9EB; ">
+            <h5>Câu trả lời của bạn:</h5>
+            @using (Html.BeginForm())
+            {
+                <textarea id="noidungtl" size="70" name="sNoiDungTL"></textarea>
+                <script>CKEDITOR.replace('noidungtl')</script>
+                <button style="margin:auto; width: 20%;" type="submit" name="sFlag" value="1" class="btn btn-outline-primary">Lưu trả lời</button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@using Forum.Models;
+@{
+    NguoiDung nd = (NguoiDung)Session["TaiKhoan"];
+}
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-light" style="position: fixed; top: 0px; z-index: 1030; background: #7FBCD2; ">
+        <a class="navbar-brand" href="@Url.Action("Index","Home")"><img height="30" width="150" src="~/Asset/images/icons/logo-01.png"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <div class="btn-outline-secondary" style="border-radius: 1000px; max-width: 90px;">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Giới thiệu</a>
+                        <div class="dropdown-menu" style="min-width:280px;">
+                            <a class="dropdown-item" href="https://vienktcn.tdmu.edu.vn/">Viện Kỹ thuật - Công nghệ</a>
+                            <a class="dropdown-item" href="https://www.facebook.com/Youth.KTCN">Đoàn Viện Kỹ thuật-Công nghệ</a>
+                            <div class="dropdown-item btn btn-group dropright" data-toggle="dropdown" aria-expanded="false">
+                                Các CLB
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="https://www.facebook.com/profile.php?id=100064178466574/">CLB IT</a>
+                                    <a class="dropdown-item" href="#">CLB Thích Tò Mò</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Thông tin diễn đàn</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <span>&nbsp;&nbsp;&nbsp;</span>
+                </li>
+                <li class="nav-item ">
+
+                </li>
+            </ul>
+            <form class="form-inline my-0 my-lg-0">
+                <input class="form-control mr-sm-2" size="60%" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            @if (Session["TaiKhoan"] != null)
+            {
+                <span>@nd.TenND</span>
+                <a href="@Url.Action("LogOut","User")"><span class="bi bi-box-arrow-right" style="padding-left:5px; text-decoration:none;"></span></a>
+            }
+            else
+            {
+                <a href="@Url.Action("DangNhap","User")"class="btn btn-primary my-2 my-sm-0"style="margin-right:5px;"> Đăng nhập</a>
+                <a href="@Url.Action("DangKy","User")" class="btn btn-outline-dark text-white my-2 my-sm-0"> Đăng ký</a>
+            }
+        </div>
+    </nav>
+</div>

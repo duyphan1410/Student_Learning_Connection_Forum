@@ -1,0 +1,147 @@
+﻿@using Forum.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<BaiDang>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<br />
+<h3>Câu hỏi hàng đầu</h3>
+<div>
+    <div class="nav" style="float: right;">
+        <div class="nav-item active btn-light" style="border: 1px solid black; border-bottom-left-radius: 7px; border-top-left-radius: 7px; padding: 0px; margin-right: -1px;">
+            <a href="#" class="nav-link" style="color: black;">Mới nhất</a>
+        </div>
+
+        <div class="nav-item" style="border: 1px solid black; padding: 0px; color: black; margin-right: -1px;">
+            <a href="#" class="nav-link" style="color: black;">Tuần</a>
+        </div>
+        <div class="nav-item" style="border: 1px solid black; border-bottom-right-radius: 7px; border-top-right-radius: 7px; padding: 0px; color: black; margin-right: -1px;">
+            <a href="#" class="nav-link" style="color: black;">Tháng</a>
+        </div>
+    </div>
+</div>
+<div style="clear: right;">
+    <p>&nbsp;</p>
+</div>
+
+@{
+    foreach (var item in Model)
+    {
+        <div style="margin-bottom: 5px; border: 0.5px solid black; border-right: 0px; clear: right; border-bottom-left-radius: 7px; border-top-left-radius: 7px; ">
+            <div class="container" id="CauHoi">
+                <div class="row" style="margin: 3px">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="Noidung" style=" border-right: 1px solid hsl(205deg 7% 30% / 67%); ">
+                        <a href="@Url.Action("Details", "Home", new { id = item.MaBD })" style="color: black; text-decoration:none">
+                            <div id="NguoiDang" style="margin: 10px;">
+                                @if (item.NguoiDung.GioiTinh == false)
+                                {
+                                    <img src="~/Images/Female.jpg" style="width: 32px; height: 32px; border: 1px solid #1570ef; border-radius: 100%;" />
+                                }
+                                else
+                                {
+                                    <img src="~/Images/Male.jpg" style="width: 32px; height: 32px; border: 1px solid #1570ef; border-radius: 100%;" />
+                                }
+                                <span style="font-family:Roboto; font-style:initial;">@item.NguoiDung.TenND</span>
+                                <span class="disabled" style="font-size:12px">@item.NgayDang.Value.ToString("dd/MM/yyyy").Replace('-', '/')</span>
+                            </div>
+                            <div id="NoiDungCauHoi" style="padding-left:10px; margin-bottom: 10px;">
+                                <div id="TieuDe" style="font-weight: bold; overflow: hidden; display: block; text-overflow: ellipsis; white-space:nowrap; height: auto; width: 400px; "><span>@item.TieuDe</span></div>
+                                <div id="NDngan" style="text-align: justify; overflow: hidden; display: block; text-overflow: ellipsis; height: 50px; width: 400px; ">
+                                    <span>
+                                        @Html.Raw(item.NoiDung.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"))
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <div id="TheTag" style="margin-bottom: 1em;">
+                            <ul style="display: inline !important; list-style: none;">
+                                <li style="display: inline !important; margin-right:4px;">
+                                    <a href="#" style="color: hsl(205deg 47% 42%); background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Mảng</a>
+                                </li>
+                                <li style="display: inline !important; margin-right: 4px; ">
+                                    <a href="#" style="color: hsl(205deg 47% 42%); background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px;">C++</a>
+                                </li>
+                                <li style="display: inline !important; margin-right: 4px;">
+                                    <a href="#" style="color: hsl(205deg 47% 42%); background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Kỹ thuật lập trình</a>
+                                </li>
+                                <li style="display: inline !important; margin-right: 4px;">
+                                    <a href="#" style="color: hsl(205deg 47% 42%); background-color: hsl(205deg 46% 92%); border-color: transparent; display: inline-block; padding: 0.4em 0.5em; margin: 2px 2px 2px 0px; ">Năm nhất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="TuongTac" style="align-items: center">
+                        <div style="flex-direction: column; padding-top:50%; padding-bottom:1em;">
+                            <span class="bi bi-check-lg"> @item.LuotTuongTac </span><span>Vote</span>
+                        </div>
+                        <div style="flex-direction: column; padding-bottom: 1em;">
+                            <span class="bi bi-chat-square-dots-fill"></span> @item.LuotPH <span>Phản hồi</span>
+                        </div>
+                        <div style="flex-direction: column; padding-bottom: 1em;">
+                            <span class="bi bi-eye-fill"></span> 1 <span>Xem</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+<div>
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    <div class="pagination" style="display:flex;justify-content:center;">
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
+                        new PagedListRenderOptions
+                        {
+                            LinkToFirstPageFormat = "<<",
+                            LinkToPreviousPageFormat = "<",
+                            LinkToNextPageFormat = ">",
+                            LinkToLastPageFormat = ">>",
+                            LiElementClasses = new string[] { "page-item" },
+                        })
+    </div>
+</div>
+<style>
+    .ul.pagination {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        border-radius: 0.25rem;
+    }
+
+    ul.pagination li {
+        display: list-item;
+
+    }
+
+        ul.pagination li a {
+            margin-left: 0;
+            border-top-left-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+            cursor: pointer;
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            text-decoration: none;
+        }
+
+            ul.pagination li a:active {
+                z-index: 1;
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+        ul.pagination li a:hover:not(.active) {
+            cursor: pointer;
+            background-color: #ddd;
+        }
+</style>
+

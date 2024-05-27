@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Forum.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                @if (TempData["AlertMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        <strong>Success!!!</strong> @TempData["AlertMessage"]
+                    </div>
+                }
+                <div class="card-body">
+                    <h4 class="card-title">Users</h4>
+                    <a class="btn btn-primary" href="@Url.Action("Create")">Thêm người dùng</a>
+                    <div class="table-responsive mt-3">
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    STT
+                                </th>
+                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TenND)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GioiTinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NgaySinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SDT)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ChucVu)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ChuyenNganh)
+                                </th>
+                                <th></th>
+                            </tr>
+                            @{
+                                int k = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @k
+                                        @{
+                                            k++;
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenND)
+                                    </td>
+                                    <td>
+
+                                        @if (item.GioiTinh == true)
+                                        {
+                                            <span class="label label-danger">Nam</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="label label-warning">nữ</span>
+                                        }
+
+                                    </td>
+                                    <td>
+
+                                        @Html.FormatValue(item.NgaySinh, "{0:dd/MM/yyyy}")
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SDT)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ChucVu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ChuyenNganh)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.MaND }, new { @class = "btn btn-warning" })
+                                        @Html.ActionLink("Details", "Details", new { id = item.MaND }, new { @class = "btn btn-primary" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.MaND }, new { @class = "btn btn-danger", onclick = "return confirm('Are sure wants to delete?');" })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

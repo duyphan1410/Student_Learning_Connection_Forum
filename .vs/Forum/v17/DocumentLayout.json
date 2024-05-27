@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Forum\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|c:\\users\\admin\\desktop\\forum\\forum\\views\\newpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\views\\newpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|c:\\users\\admin\\desktop\\forum\\forum\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|c:\\users\\admin\\desktop\\forum\\forum\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|C:\\Users\\Admin\\Desktop\\Forum\\forum\\views\\shared\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\views\\shared\\navpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|C:\\Users\\Admin\\Desktop\\Forum\\forum\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|C:\\Users\\Admin\\Desktop\\Forum\\forum\\areas\\admin\\views\\userad\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67AE3B07-A023-44F2-BB4B-61B41658FD41}|Forum\\Forum.csproj|solutionrelative:forum\\areas\\admin\\views\\userad\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Areas\\Admin\\Views\\UserAd\\Index.cshtml",
+              "RelativeDocumentMoniker": "Forum\\Areas\\Admin\\Views\\UserAd\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Areas\\Admin\\Views\\UserAd\\Index.cshtml",
+              "RelativeToolTip": "Forum\\Areas\\Admin\\Views\\UserAd\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGIAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-26T18:07:56.185Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\NewPost\\Index.cshtml",
+              "RelativeDocumentMoniker": "Forum\\Views\\NewPost\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\NewPost\\Index.cshtml",
+              "RelativeToolTip": "Forum\\Views\\NewPost\\Index.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T21:13:34.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Forum\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Forum\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T21:13:19.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Forum\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Forum\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T16:29:57.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Shared\\NavPartial.cshtml",
+              "RelativeDocumentMoniker": "Forum\\Views\\Shared\\NavPartial.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Shared\\NavPartial.cshtml",
+              "RelativeToolTip": "Forum\\Views\\Shared\\NavPartial.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T16:29:09.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Forum\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Forum\\Forum\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Forum\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T16:29:00.868Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
