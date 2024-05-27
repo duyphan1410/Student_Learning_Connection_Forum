@@ -53,8 +53,8 @@ namespace Forum.App_Start
             //   appSecret: "");
 
             app.UseGoogleAuthentication(
-                 clientId: "157167206188-coc6h0gg5c8ual4e7fc2h11ccqlg9aig.apps.googleusercontent.com",
-                 clientSecret: "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");
+                 clientId = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID"),
+                 clientSecret= Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET"));
         }
     }
 }
